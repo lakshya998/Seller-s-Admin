@@ -1,30 +1,5 @@
 <html lang="en"><head>
     <meta charset="UTF-8">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seller's Admin Page</title>
 </head>
@@ -51,7 +26,7 @@
         addProductBtn.addEventListener("click", saveToCloud)
 
         window.addEventListener("DOMContentLoaded", (obj) => {
-            axios.get("https://crudcrud.com/api/0207628d3e374f7da79d61170cd69ba2/products")
+            axios.get("https://crudcrud.com/api/ab62c0a3518c49b68e50d15b64420caa/products")
             .then((response) => {
                 for (var i = 0; i < response.data.length; i++) {
                     showProductsOnScreen(response.data[i])
@@ -68,11 +43,8 @@
                 productName,
                 productSellingPrice
             }
-
-
-        
             
-            axios.post("https://crudcrud.com/api/0207628d3e374f7da79d61170cd69ba2/products", obj)
+            axios.post("https://crudcrud.com/api/ab62c0a3518c49b68e50d15b64420caa/products", obj)
             .then((response) => showProductsOnScreen(response.data))
             .catch((err) => {
                 document.body.innerHTML = document.body.innerHTML + "<h4> Something went wrong. </h4>"
@@ -99,7 +71,7 @@
 
             deleteButton.addEventListener("click",function(e){
                 e.preventDefault();
-                base_url = "https://crudcrud.com/api/0207628d3e374f7da79d61170cd69ba2/products/"
+                base_url = "https://crudcrud.com/api/ab62c0a3518c49b68e50d15b64420caa/products/"
                 axios.delete(base_url + obj._id);
                 parentElement.removeChild(childElement);
                 totalSellingPrice -= Number(obj.productSellingPrice);
@@ -107,9 +79,9 @@
             });
             
         }
-
     </script>
 
 
 
- </body></html>
+ </body>
+ </html>
